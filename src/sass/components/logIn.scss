@@ -1,0 +1,14 @@
+.logIn{
+    @include form(75%);
+}
+
+.formStatus, .formStatus2{
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: #9d0208;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    animation: fadeOut 5s ease-in-out 0s 1 forwards;
+}

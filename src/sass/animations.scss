@@ -1,0 +1,41 @@
+@keyframes scaleUp {
+    0%, 100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.75);
+    }
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100%{
+        opacity: 0;
+        visibility: hidden;
+
+    }
+}
+
+@keyframes onDocumentLR {
+    0%{
+        transform: translateX(340px);
+        opacity: 0;
+    }
+    25%{
+        transform: translateX(-50px);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

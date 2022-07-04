@@ -1,0 +1,694 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: "Rufina", serif;
+  position: relative;
+}
+
+#hidden {
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(4, 25vh);
+  grid-template-areas: "logo login" "menu ." "menu ." ".    schedule";
+}
+
+.header__logo {
+  grid-area: logo;
+  justify-self: center;
+  padding-top: 55px;
+}
+.header__logo img {
+  width: 200px;
+}
+.header__logo button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header__logo button .toogleMenu {
+  display: none;
+  width: 100px;
+}
+
+.header__nav {
+  grid-area: login;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 60px 0 0;
+}
+.header__nav-hash {
+  height: 62px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid white;
+  transition: all 0.5s;
+}
+.header__nav-hash:hover {
+  border: 2px solid white;
+  transition: all 1s;
+}
+.header__nav-button {
+  height: 62px;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 20px 46px;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+.header__nav-button:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all 1s;
+}
+
+.header__identifier__section {
+  grid-area: menu;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.header__identifier__section h1 {
+  font-size: 148px;
+  margin-bottom: 50px;
+  padding-left: 20px;
+}
+.header__identifier__section p {
+  font-size: 32px;
+}
+
+.header__Schedule {
+  width: 100%;
+  grid-area: schedule;
+  display: grid;
+  grid-template: repeat(3, 33%)/repeat(3, 33%);
+  justify-content: center;
+  color: #fff;
+  padding: 0 138px;
+  grid-template-areas: "open . days" "div div div" "brunch brunch brunch";
+}
+.header__Schedule .days {
+  grid-area: days;
+}
+.header__Schedule .days, .header__Schedule .open {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  align-self: end;
+}
+.header__Schedule__div {
+  grid-area: div;
+  width: 100%;
+  align-self: center;
+}
+.header__Schedule__hour {
+  grid-area: brunch;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 122px;
+}
+.menu__type__food-kink {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.menu__type__food-kink p {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+.menu h2 {
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
+.menu h3 {
+  font-size: 2.5rem;
+}
+.menu__type__food-description {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+.menu__type__food-description img {
+  height: 500px;
+  width: 100%;
+  max-width: 350px;
+  padding: 0 10px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.menu__type__food-description-plates {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 58px;
+  width: 350px;
+  padding: 0 10px;
+}
+.menu__type__food-description-plates-plate {
+  width: 100%;
+}
+.menu__type__food-description-plates-plate .price {
+  width: 100%;
+  text-align: end;
+  border-bottom: 2px dashed black;
+  padding: 5px;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+.menu__type__food-description-plates-plate h3 {
+  margin-bottom: 10px;
+}
+.menu__type__food-description-plates-plate p {
+  font-size: 1.4rem;
+}
+.menu__type__food-description-plates button[type=button] {
+  border: none;
+  width: 40%;
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #000;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s;
+  background-color: transparent;
+  position: relative;
+  right: 0px;
+}
+.menu__type__food-description-plates button[type=button]:hover {
+  border-radius: 10px;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s;
+  color: black;
+  background: #faf9f9;
+  box-shadow: 20px 20px 60px #d5d4d4, -20px -20px 60px #ffffff;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.logIn {
+  padding: 120px 0 50px;
+  position: relative;
+  background-color: #EBF0E4;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.logIn img {
+  position: absolute;
+  width: 250px;
+  top: 25px;
+}
+.logIn h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.logIn button[type=button].green {
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  background-color: #5E6600;
+  color: #EBF0E4;
+  padding: 10px 10px;
+  transition: all 0.5s;
+}
+.logIn button[type=button].green:focus, .logIn button[type=button].green:hover {
+  border-radius: 10px;
+  border: 2px solid #5E6600;
+  color: #5E6600;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #EBF0E4;
+  transition: all 1s;
+}
+.logIn form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.logIn form label {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.logIn form input {
+  margin-bottom: 40px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 20px 20px;
+  background-color: transparent;
+}
+
+.formStatus, .formStatus2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: #9d0208;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  animation: fadeOut 5s ease-in-out 0s 1 forwards;
+}
+
+.users {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 50px 20px;
+}
+.users__info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.users__info img {
+  width: 50%;
+  min-width: 250px;
+  max-width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  margin: 0 20px 20px 0;
+  object-fit: cover;
+}
+.users__info__text {
+  padding: 25px 0 0;
+  font-size: 1.6rem;
+}
+.users__info__text p {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.users__info__text p.green {
+  color: #9CAA00;
+}
+
+.orders__current {
+  padding: 150px 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.orders__current .order {
+  display: flex;
+  height: 450px;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 50px;
+  background: #faf9f9;
+  box-shadow: 20px 20px 60px #d5d4d4, -20px -20px 60px #ffffff;
+}
+.orders__current .orders__current-user {
+  display: flex;
+  padding: 0 10px;
+  gap: 10px;
+  color: #5E6600;
+  justify-content: center;
+  align-items: center;
+}
+.orders__current .orders__current-user p::before {
+  content: "•";
+  margin-right: 10px;
+  font-size: 1.6rem;
+}
+.orders__current .orders__current-table h3.table {
+  font-size: 2.5rem;
+  width: 100%;
+  padding: 0 25px 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed black;
+}
+.orders__current .orders__current-table p {
+  padding: 0 25px;
+  font-size: 1.6rem;
+}
+.orders__current .order button[type=button].button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: all 0.25s;
+}
+.orders__current .order button[type=button].button span img {
+  width: 25px;
+}
+.orders__current .order button[type=button].button:hover, .orders__current .order button[type=button].button:focus {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
+.orders__create {
+  padding: 120px 0 50px;
+  position: relative;
+  background-color: #EBF0E4;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.orders__create img {
+  position: absolute;
+  width: 250px;
+  top: 25px;
+}
+.orders__create h2 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.orders__create button[type=button].green {
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  background-color: #5E6600;
+  color: #EBF0E4;
+  padding: 10px 10px;
+  transition: all 0.5s;
+}
+.orders__create button[type=button].green:focus, .orders__create button[type=button].green:hover {
+  border-radius: 10px;
+  border: 2px solid #5E6600;
+  color: #5E6600;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #EBF0E4;
+  transition: all 1s;
+}
+.orders__create form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+.orders__create form label {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.orders__create form input {
+  margin-bottom: 40px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 20px 20px;
+  background-color: transparent;
+}
+.orders__create .inputContainer {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+.orders__create .inputContainer input {
+  width: 50%;
+}
+.orders__create button[type=button].white {
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50%;
+  background-color: wite;
+  padding: 10px 10px;
+  transition: all 0.5s;
+  margin-bottom: 10px;
+}
+.orders__create button[type=button].white:focus, .orders__create button[type=button].white:hover {
+  border-radius: 10px;
+  border: 2px solid #5E6600;
+  color: #5E6600;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #EBF0E4;
+  transition: all 1s;
+}
+
+.modal__loader {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  animation: fadeOut 3.5s ease-in-out 0s 1 forwards;
+}
+.modal__loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  width: 50%;
+  min-width: 250px;
+  max-width: 400px;
+  height: 200px;
+  position: fixed;
+  top: calc(50vh - 100px);
+}
+.modal__loader-container-points {
+  width: 50px;
+  height: 50px;
+  background-color: #6A800D;
+  border-radius: 50%;
+  animation: scaleUp infinite 1s ease;
+}
+.modal__loader-container-points:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.modal__loader-container-points:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.modal__loader-container-points:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.modal__menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__menu__container {
+  width: 350px;
+  height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 25px;
+}
+.modal__menu__container-button {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: transparent;
+  display: grid;
+  place-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.modal__menu__container-button div {
+  height: 35px;
+  border-radius: 30%;
+  width: 3px;
+  background-color: #000;
+  position: absolute;
+}
+.modal__menu__container-button div:nth-child(1) {
+  transform: rotate(45deg);
+}
+.modal__menu__container-button div:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.modal__menu__container-button:hover {
+  background-color: antiquewhite;
+  transition: all 1s;
+}
+.modal__menu__container-title {
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.modal__menu__container .modal__menu__container__plates {
+  width: 100%;
+}
+.modal__menu__container-plate {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #000;
+  margin-bottom: 25px;
+}
+.modal__menu__container-plate p {
+  font-size: 1.4rem;
+}
+.modal__menu__container-plate p:nth-child(1) {
+  color: darkgray;
+}
+.modal__menu__container-plate p:nth-child(2) {
+  font-weight: bold;
+}
+
+.aproveOrder {
+  margin: 25px 10px 0 0;
+  background-color: #a1ff0a;
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  padding: 10px 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  animation: onDocumentLR 3s ease-in 0s 1 forwards;
+}
+
+@keyframes scaleUp {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.75);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes onDocumentLR {
+  0% {
+    transform: translateX(340px);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(-50px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@media (max-width: 400px) {
+  body header {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 33%);
+    grid-template-areas: "logo login" "menu menu" "schedule schedule";
+  }
+  div.header__logo {
+    justify-self: initial;
+  }
+  div.header__logo img {
+    display: none;
+  }
+  header div.header__logo .toogleMenu {
+    display: inline;
+  }
+  .header__nav-hash {
+    display: none;
+  }
+  header .header__identifier__section h1 {
+    font-size: 75px;
+    margin-bottom: 50px;
+  }
+  header .header__identifier__section p {
+    font-size: 16px;
+  }
+  header .header__Schedule {
+    padding: 0 10px;
+  }
+  header .header__Schedule .days, header .header__Schedule .open {
+    font-size: 1.2rem;
+  }
+  header .header__Schedule__hour {
+    font-size: 1rem;
+  }
+  header .header__nav {
+    padding: 70px 0 0;
+  }
+  header .header__nav-button {
+    padding: 10px 23px;
+  }
+}
+main .logIn img {
+  width: 200px;
+}
+
+/*# sourceMappingURL=main.css.map */

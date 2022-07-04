@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+
+@mixin title(){
+    font-size: 5rem;
+}
+
+@mixin subTitle(){
+    font-size: 2.5rem;
+}
+
+@mixin button($color){
+    border-radius: 10px;
+    border: 2px solid $color;
+    color: $color;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@mixin form($formSize){
+    padding: 120px 0 50px;
+    position: relative;
+    background-color: #EBF0E4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    img{    
+        position: absolute;
+        width: 250px;
+        top: 25px;
+    } 
+
+    h2{
+        @include title();
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    button[type="button"].green{
+        @include button(black);
+        width: 50%;
+        background-color: #5E6600;
+        color: #EBF0E4;
+        padding: 10px 10px;
+        transition: all 0.5s;
+
+        &:focus,
+        &:hover{
+            @include button(#5E6600);
+            background-color: #EBF0E4;
+            transition: all 1s;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: $formSize;
+
+        label{
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        
+        input{
+            margin-bottom: 40px;
+            height: 30px;
+            border-radius: 5px;
+            padding: 20px 20px;
+            background-color: transparent;
+        }
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    font-family: 'Rufina', serif;
+    position: relative;
+}
+
+#hidden{
+    display: none;
+}

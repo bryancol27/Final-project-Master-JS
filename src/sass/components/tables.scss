@@ -1,0 +1,100 @@
+.orders__current{
+    padding: 150px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .order{
+        display: flex;
+        height: 450px;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 50px;
+        background: #faf9f9;
+        box-shadow:  20px 20px 60px #d5d4d4,
+                    -20px -20px 60px #ffffff;
+
+        &s__current-user{
+            display: flex;
+            padding: 0 10px;
+            gap: 10px;
+            color: #5E6600;
+            justify-content: center;
+            align-items: center;
+
+            p::before{
+                content: '•';
+                margin-right: 10px;
+                font-size: 1.6rem
+            }
+        }
+
+        &s__current-table{
+            h3.table{
+                @include subTitle();
+                width: 100%;
+                padding: 0 25px 10px;
+                margin-bottom: 20px;
+                border-bottom: 2px dashed black;
+            }
+            p{
+                padding: 0 25px;
+                font-size: 1.6rem
+            }
+        }
+
+        button[type="button"].button{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            transition: all 0.25s;
+
+            span img{
+                width: 25px
+            }
+
+            &:hover,
+            &:focus{
+                transform: scale(1.2);
+                transition: all 0.5s
+            }
+        }
+    }
+}
+
+
+.orders__create{
+    @include form(75%);
+
+    .inputContainer{
+        width: 100%;
+        display: flex;
+        gap: 30px;
+
+        input{
+            width: 50%;
+        }
+    }
+
+    button[type="button"].white{
+        @include button(black);
+        width: 50%;
+        background-color: wite;
+        padding: 10px 10px;
+        transition: all 0.5s;
+        margin-bottom: 10px;
+
+        &:focus,
+        &:hover{
+            @include button(#5E6600);
+            background-color: #EBF0E4;
+            transition: all 1s;
+        }
+    }
+}

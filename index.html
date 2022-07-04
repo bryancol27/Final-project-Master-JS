@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <div class="header__logo">
+            <button id="logo">
+                <img src="./assets/Logo.png" alt="Logo FoodZero">
+            </button>
+            
+            <button>
+                <img src="./assets/NaviOpen.png" alt="toogle menu" class="toogleMenu">
+            </button>
+        </div>
+
+        <nav class="header__nav">
+
+            <button class="header__nav-hash">Ordenes</button>
+            <button class="header__nav-hash">Users</button>
+
+            <button class="header__nav-button logInHash">Iniciar Sesión</button>
+            <button class="header__nav-button logOutHash">Salir de la Sesión</button>
+
+        </nav>
+
+        <div class="header__identifier__section">
+            <h1>Menú</h1>
+            <p>Conocer nuestra variada carta</p>
+        </div>
+
+        <div class="header__Schedule" id="">
+            <h3 class="open">Open Time</h3>
+
+            <p class="days">Sunday - Friday</p>
+            
+            <img src="./assets/Divider.png" class="header__Schedule__div"" src="" alt="separador cabecera horarios">
+
+            <div class="header__Schedule__hour">
+                <p class="header__Schedule__hour-time">Brunch <span>11:00-12:00</span></p>
+
+                <p class="header__Schedule__hour-time">Lunch <span>13:00-17:00</span></p>
+
+                <p class="header__Schedule__hour-time">Dinner <span>18:00-20:00</span></p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- Apartado sobre menu -->
+        <section class="menu" id="hidden">
+            
+            <!-- Example Content -->
+            <!-- <article class="menu__type__food">
+                <div class="menu__type__food-kink">
+                    <h2>Entradas</h2>
+                    <p>This is a section of your menu. give your section a brief description</p>
+                </div>
+
+                <div class="menu__type__food-description">
+                    <img src="./imgs//Image1.png" alt="Imagen Plato" class="menu__type__food-description-img">
+
+                    <div class="menu__type__food-description-plates">
+
+                        <div class="menu__type__food-description-plates-plate">
+                            <p class="price">$20</p>
+                            <h3>Grilled Okra And Tomatoes</h3>
+                            <p></p>
+                        </div>
+
+                        <div class="menu__type__food-description-plates-plate">
+                            <p class="price">$18</p>
+                            <h3>Cucumber Salad</h3>
+                            <p></p>
+                        </div>
+
+                        <div class="menu__type__food-description-plates-plate">
+                            <p class="price">$12</p>
+                            <h3>Basil Pancakes</h3>
+                            <p></p>
+                        </div>
+
+                        <button type="button">Ver más</button>
+                    </div>
+                </div>
+            </article> -->
+            
+        </section>
+
+        <!-- Apartado sobre log in -->
+        <section class="logIn" id="hidden">
+        
+            <img src="./assets/Mint.png" alt="Flor Decoracion">
+
+            <h2>Acceso Trabajadores</h2>
+
+            <p id="hidden" data-id="formStatus" class="formStatus"></p>
+
+            <form action="">
+                <label for="Name">Usuario</label>
+                <input type="text" id="Name" name="Name" placeholder="Juanito" />
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="・・・・・・・・・・・・" autocomplete="on"/>
+            </form> 
+
+            <button class="green" type="button" id="logIn">Acceder</button>
+        </section> 
+    
+        <!-- Apartado de usuarios  -->
+        <section class="users" id="hidden">
+            
+            <article class="users__info">
+                <img src="./imgs/UserPhoto.png" alt="" class="users__info__img">
+                
+                <div class="users__info__text">
+                    <p class="name">Madonna</p>
+                    <p class="type-user">Administrador</p>
+                    <p class="birthday">Cumpleaños 16 de agosto de 1985</p>
+                    <p class="gmail green">Madonna@restaurant.com</p>
+                    <p class="number green">+56968615452 </p>
+                </div>
+
+            </article>
+
+        </section>
+    
+        <!-- Apartado de mesas -->
+        <section class="orders" id="hidden">
+            <article class="orders__current">
+
+                <!-- Example -->
+                <!-- <div class="order">
+                    <div class="orders__current-user">
+                        <img src="./imgs/Avatar.png" alt="avatar">
+                        <p class="name">Dua Lipa</p>
+                        <p class="date">October 17,2021</p>
+                        <p class="hour">3:33PM</p>
+                        <p class="id">ID:325</p>
+                    </div>
+    
+                    <div class="orders__current-table">
+                        <h3 class="table">Mesa 4</h3>
+
+                        <div class="products">
+                            <p>Papas Bravas: 1</p>
+                            <p>Papas azadas: 2</p>
+                        </div>
+                    </div>
+    
+                    <button class="button" type="button">
+                        Marcar como entregado <span><img src="./assets/Vector.png" alt="Arrow"></span>
+                    </button>
+                </div> -->
+
+            </article>
+
+            <article class="orders__create">
+                <img src="./assets/Mint.png" alt="Flor Decoracion">
+                
+                <h2>Nuevo Pedido</h2>
+                
+                <p id="hidden" data-id="formStatus" class="formStatus2"></p>
+
+                <form action="" id="orderPlace">
+                    <input list="tables" name="order" id="orderTable" placeholder="Mesa" autocomplete="off">
+                    
+                    <div class="inputContainer">
+                        <input list="productName" name="order" id="orderProduct" placeholder="Producto" autocomplete="off">
+                        <input type="text" name="order" id="orderQuantity" placeholder="Cantidad">
+                    </div>
+    
+                </form>
+                <button type="button" class="white" id="createInput">Agregar Producto</button>
+                <button type="button" class="green" id="createOrderBtn">Crear Pedido</button>
+            </article>
+        </section>
+
+    </main>
+
+    <div class="loader" id="hidden" data-class="modal__loader">
+
+        <section class="modal__loader-container">
+            <div class="modal__loader-container-points"></div>
+            <div class="modal__loader-container-points"></div>
+            <div class="modal__loader-container-points"></div>
+        </section>
+        
+    </div>
+
+    <div class="modal__menu" id="hidden">
+
+        <div class="modal__menu__container">
+
+            <button type="button" class="modal__menu__container-button">
+                <div></div>
+                <div></div>
+            </button>
+
+            <h3 class="modal__menu__container-title"></h3>
+
+            <div class="modal__menu__container__plates">
+
+                <!-- Example -->
+                <!-- <div class="modal__menu__container-plate">
+                    <p>Conchas Chilenas</p>
+                    <p>$3500</p>
+                </div> -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="advice" id="hidden" data-class="aproveOrder" >
+        <p>Se ha enviado la orden correctamente</p>
+    </div>  
+
+    <datalist id="tables">
+    </datalist>
+
+    <datalist id="productName">
+    </datalist>
+
+    <script src="./src/index.js" type="module"></script>
+</body>
+</html>
