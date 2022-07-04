@@ -43,4 +43,4 @@
 - [x] hacer logica de envio ordenes (Modo User)
 - [x] Presentar la información sobre los usuarios (Modo admin)
 - [x] Presentar la información sobre pedidos y mesas (Modo user)
-- [] Hacer que los botones de el menu muestren sus respectivos tipos de comida cuando se les haga click 
+- [x] Hacer que los botones de el menu muestren sus respectivos tipos de comida cuando se les haga click 
