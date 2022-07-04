@@ -64,8 +64,8 @@ export const makingOrder = async() => {
     const {access_token, token_type, infoUser} = getCredentialsData();
     
     makeOrder(access_token, token_type, infoUser, {
-        orders: valueOrders(),
         table: selectedTable(),
+        orders: valueOrders(),
     });
 };
 

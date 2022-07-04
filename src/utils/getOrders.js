@@ -16,6 +16,7 @@ export const getOrders = async(token, type) => {
 };
 
 export const makeOrder = async (token, type, infoUser, dataOrder) =>{
+
     const currentDate = new Date();
     const dateArray = [currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear()]
     let newDate = new Date( dateArray[2], dateArray[1] - 1, dateArray[0]);

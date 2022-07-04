@@ -17,7 +17,9 @@ export const createInputOrder = () =>{
 
 export const valueOrders = () =>{
     let orderArray = [];
+
     const containOrderValue = [...document.querySelectorAll('.inputContainer')];
+    
     containOrderValue.forEach(node => {
         const product =  node.children[0].value;
         const quantity = node.children[1].value;
