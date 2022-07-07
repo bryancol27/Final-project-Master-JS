@@ -12,6 +12,7 @@ export const getOrders = async(token, type) => {
         }
     });
     const data = await res.json()
+    console.log(data)
     return data
 };
 
@@ -25,14 +26,14 @@ export const makeOrder = async (token, type, infoUser, dataOrder) =>{
     {
         method: 'PUT',
         headers:{
-            "Content-type": 'application/json',
-            "Authorization": `${type} ${token}`
+            "Authorization": `${type} ${token}`,
+            "Content-type": 'application/json'
         },
         body: JSON.stringify({
-            created_at: newDate,
             id: 1,
-            table: Number(dataOrder.table),
             waiter: Number(infoUser.id),
+            created_at: newDate,
+            table: Number(dataOrder.table),
             order: dataOrder.orders,
         })
     });

@@ -10,14 +10,14 @@ const templateMenuComplete = (name, price) =>{
 };
 
 const openModalMenu = (place, array) =>{
-    const targetCard = array.find(element => element[0] = place);
+    const targetCard = array.find(element => element[0] == place);
 
     modal_menu_container.innerHTML = "";
     let template = "";
     modal_menu.id = "";
     modal_menu_title.textContent = targetCard[0];
 
-    array[1][1].forEach(element => {
+    targetCard[1].forEach(element => {
         template += templateMenuComplete(element.name, element.price);
     });
 

@@ -31,6 +31,7 @@ export const valueOrders = () =>{
             });
         };
     });
+
     return orderArray
 };
 
